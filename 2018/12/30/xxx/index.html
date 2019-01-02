@@ -225,15 +225,59 @@
         </center>
     </div>
     <div class="content-article">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>老规矩，导库<br><img src="https://upload-images.jianshu.io/upload_images/12618366-47c00045580960e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><a href="https://www.jianshu.com/p/9beab75c73b8/" title="Title" target="_blank" rel="noopener">使用CocoaPads安装第三方库</a></p>
+<hr>
+<ul>
+<li>##SVProgressHUD 都有什么特点呢？</li>
+</ul>
+<ol>
+<li><p>提示当前的状态，如：网络传输、提交中、操作成功或失败等；</p>
+</li>
+<li><p>可设置提示的 pop layer 是否为 model，提示的时候是否允许用户做其他操作；</p>
+</li>
+<li><p>可以设置背景色和自定义提示的内容；</p>
+</li>
+<li><p>使用起来非常简洁，代码量非常少。</p>
+</li>
+</ol>
+<hr>
+<p>##因为都是类方法，引入头文件<code>#import &quot;SVProgressHUD.h&quot;</code>，直接在控制器用类名引用就好，很方便</p>
+<ul>
+<li>提示框方法<br><img src="https://upload-images.jianshu.io/upload_images/12618366-f492bb2e8288ebfc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<p>5种经常使用的提示框</p>
+<ul>
+<li>(void)showSuccessWithStatus</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/12618366-df9ab685aaa685d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>(void)showErrorWithStatus</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/12618366-aa49ba40f679e0c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li><p>(void)showWithStatus<br><img src="https://upload-images.jianshu.io/upload_images/12618366-808ece9a24dc64e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+<li><p>(void)showInfoWithStatus<br><img src="https://upload-images.jianshu.io/upload_images/12618366-a9b4e428bd50dffd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+<li><p>(void)showProgress<br><img src="https://upload-images.jianshu.io/upload_images/12618366-b51931901de1810c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="显示进度的，图为0.1的进度，满了为1"></p>
+</li>
+</ul>
+<ul>
+<li>设置提示框属性的方法<br><img src="https://upload-images.jianshu.io/upload_images/12618366-e413ef05ad9ccc1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></li>
+</ul>
+<p>经常用的set方法使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">SVProgressHUDStyleLight,        // default style, white HUD with black text, HUD background will be blurred</span><br><span class="line">SVProgressHUDStyleDark,         // black HUD and white text, HUD background will be blurred</span><br><span class="line">SVProgressHUDStyleCustom        // uses the fore- and background color properties</span><br><span class="line">*/</span><br><span class="line">//设置HUD的Style</span><br><span class="line">[SVProgressHUD setDefaultStyle:(SVProgressHUDStyleDark)];</span><br><span class="line">//设置HUD和文本的颜色</span><br><span class="line">[SVProgressHUD setForegroundColor:[UIColor greenColor]];</span><br><span class="line">//设置HUD背景颜色</span><br><span class="line">[SVProgressHUD setBackgroundColor:[UIColor magentaColor]];</span><br></pre></td></tr></table></figure></p>
+<p>以前HUD背景图层的样式可在提示框方法里面把参数穿进去，现在不行了<br><img src="https://upload-images.jianshu.io/upload_images/12618366-9e0f1658bcf01ce2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">*  设置HUD背景图层的样式</span><br><span class="line">*</span><br><span class="line">*  SVProgressHUDMaskTypeNone：默认图层样式，当HUD显示的时候，允许用户交互。</span><br><span class="line">*</span><br><span class="line">*  SVProgressHUDMaskTypeClear：当HUD显示的时候，不允许用户交互。</span><br><span class="line">*</span><br><span class="line">*  SVProgressHUDMaskTypeBlack：当HUD显示的时候，不允许用户交互，且显示黑色背景图层。</span><br><span class="line">*</span><br><span class="line">*  SVProgressHUDMaskTypeGradient：当HUD显示的时候，不允许用户交互，且显示渐变的背景图层。</span><br><span class="line">*</span><br><span class="line">*  SVProgressHUDMaskTypeCustom：当HUD显示的时候，不允许用户交互，且显示背景图层自定义的颜色。</span><br><span class="line">*/</span><br><span class="line">[SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeCustom];</span><br></pre></td></tr></table></figure>
+<p>所谓背景图层样式就是，出现提示框，提示框外的背景的样式，比如我背景红色调用SVProgressHUDMaskTypeGradient这个样式，就是这样的<br><img src="https://upload-images.jianshu.io/upload_images/12618366-a780eee602358087.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="渐变的"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/*</span><br><span class="line">SVProgressHUDAnimationTypeFlat,     // 默认动画类型，自定义平面动画</span><br><span class="line">SVProgressHUDAnimationTypeNative    // iOS native UIActivityIndicatorView</span><br><span class="line">*/</span><br><span class="line">//动画效果</span><br><span class="line">[SVProgressHUD setDefaultAnimationType:(SVProgressHUDAnimationTypeFlat)];</span><br></pre></td></tr></table></figure>
+<p>这个主要针对加载中的那个动画效果放图看看就知道了<br><img src="https://upload-images.jianshu.io/upload_images/12618366-808ece9a24dc64e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="SVProgressHUDAnimationTypeFlat"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12618366-bd40a76f6a385d6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="SVProgressHUDAnimationTypeNative"></p>
+<ul>
+<li>隐藏提示框的方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//设置多少秒后隐藏</span><br><span class="line">[SVProgressHUD dismissWithDelay:60.0];</span><br><span class="line">//这个相当于</span><br><span class="line">[self performSelector:@selector(dismiss) withObject:nil afterDelay:60];</span><br><span class="line">- (void)dismiss&#123;  </span><br><span class="line">//这个是直接隐藏</span><br><span class="line">[SVProgressHUD dismiss];  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="https://github.com/li199508/SVProgressHUDDemo/" title="Title" target="_blank" rel="noopener">Demo地址</a></p>
 
     </div>
 </article>
@@ -302,6 +346,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2018/12/30/hello-world的副本/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2018/12/30/hello-world/">Hello World</a>
                 </span>
             </li>
@@ -309,12 +359,6 @@
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2018/12/30/xxx/">Hello World</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/12/30/hello-world的副本/">Hello World</a>
                 </span>
             </li>
             
@@ -336,6 +380,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2018/12/30/hello-world的副本/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2018/12/30/hello-world/">Hello World</a>
                 </span>
             </li>
@@ -343,12 +393,6 @@
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2018/12/30/xxx/">Hello World</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/12/30/hello-world的副本/">Hello World</a>
                 </span>
             </li>
             
@@ -381,11 +425,11 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/jQuery/" style="font-size: 19.01245457777824px;" class="tag-cloud-link">jQuery</a>
+    <a href="/tags/jQuery/" style="font-size: 13.53219308229701px;" class="tag-cloud-link">jQuery</a>
     
-    <a href="/tags/表格/" style="font-size: 16.903308302590542px;" class="tag-cloud-link">表格</a>
+    <a href="/tags/表格/" style="font-size: 10.536316636227333px;" class="tag-cloud-link">表格</a>
     
-    <a href="/tags/表单验证/" style="font-size: 17.132389644260424px;" class="tag-cloud-link">表单验证</a>
+    <a href="/tags/表单验证/" style="font-size: 15.787133024051277px;" class="tag-cloud-link">表单验证</a>
     
 </div>
                 
